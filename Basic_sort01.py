@@ -16,8 +16,19 @@ def selection_sort():
     return arr
 
 
+def insertion_sort():
+    global arr
+    for i in range(1, len(arr)-1):
+        for j in range(i, 0, -1):
+            if arr[j][1] < arr[j-1][1]:
+                arr[j], arr[j-1] = arr[j-1], arr[j]
+
+    return arr
+
+
 print(f"before sorting --> {arr}")
 print(f"after sorting --> {selection_sort()}")
+# print(f"after sorting --> {insertion_sort()}")
 
 print("## Teammate by test score ##")
 for i in range(len(arr)//2):
